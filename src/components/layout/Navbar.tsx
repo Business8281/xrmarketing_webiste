@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-
+import logoHeader from '../../assets/header-logo.jpg';
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,40 +30,30 @@ export function Navbar() {
             className={clsx(
                 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
                 isScrolled
-                    ? 'bg-black/50 backdrop-blur-xl border-white/10 py-4'
-                    : 'bg-transparent border-transparent py-6'
+                    ? 'bg-black/50 backdrop-blur-xl border-white/10 py-2'
+                    : 'bg-transparent border-transparent py-3'
             )}
         >
             <div className="w-full px-6 md:px-12 flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="relative z-50 block group no-underline">
-                    <div className="flex items-center gap-2">
-                        {/* Stylized XR Mark */}
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 md:w-12 md:h-12 text-white transition-transform group-hover:scale-110">
-                            <path d="M8 8L20 20L32 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M20 20L8 32" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M20 20H28C32 20 32 24 28 28L20 32" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-
-                        <div className="flex flex-col">
-                            <span className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
-                                XRMarketing
-                            </span>
-                            <span className="text-[0.6rem] md:text-[0.7rem] font-bold tracking-[0.2em] text-gray-400">
-                                PVT. LTD.
-                            </span>
-                        </div>
+                <Link to="/" className="relative z-50 block group">
+                    <div className="relative">
+                        <img
+                            src={logoHeader}
+                            alt="XRMarketing"
+                            className="h-14 md:h-16 w-auto object-contain invert mix-blend-screen transition-transform transform group-hover:scale-105"
+                        />
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-10">
+                <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.href}
                             className={clsx(
-                                "text-lg md:text-xl font-bold transition-colors relative group",
+                                "text-sm md:text-base font-bold transition-colors relative group",
                                 location.pathname === link.href ? "text-white" : "text-gray-300 hover:text-white"
                             )}
                         >
@@ -74,7 +64,7 @@ export function Navbar() {
                             )} />
                         </Link>
                     ))}
-                    <Link to="/contact" className="px-8 py-3 rounded-full bg-white text-black font-bold text-base hover:bg-gray-200 transition-colors">
+                    <Link to="/contact" className="px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition-colors">
                         Get Started
                     </Link>
                 </div>
