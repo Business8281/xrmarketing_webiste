@@ -29,7 +29,7 @@ export function Navbar() {
         <nav
             className={clsx(
                 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-black border-white/10',
-                isScrolled ? 'py-2' : 'py-3'
+                isScrolled ? 'py-3' : 'py-4'
             )}
         >
             <div className="w-full px-6 md:px-12 flex items-center justify-between">
@@ -39,7 +39,7 @@ export function Navbar() {
                         <img
                             src={logoHeader}
                             alt="XRMarketing"
-                            className="h-14 md:h-16 w-auto object-contain invert mix-blend-screen transition-transform transform group-hover:scale-105"
+                            className="h-16 md:h-20 w-auto object-contain invert mix-blend-screen transition-transform transform group-hover:scale-105"
                         />
                     </div>
                 </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
                             key={link.name}
                             to={link.href}
                             className={clsx(
-                                "text-sm md:text-base font-bold transition-colors relative group",
+                                "text-base md:text-lg font-bold transition-colors relative group",
                                 location.pathname === link.href ? "text-white" : "text-gray-300 hover:text-white"
                             )}
                         >
@@ -62,7 +62,7 @@ export function Navbar() {
                             )} />
                         </Link>
                     ))}
-                    <Link to="/contact" className="px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition-colors">
+                    <Link to="/contact" className="px-7 py-3 rounded-full bg-white text-black font-bold text-base hover:bg-gray-200 transition-colors">
                         Get Started
                     </Link>
                 </div>
