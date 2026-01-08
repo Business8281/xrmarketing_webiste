@@ -28,10 +28,8 @@ export function Navbar() {
     return (
         <nav
             className={clsx(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
-                isScrolled
-                    ? 'bg-black/50 backdrop-blur-xl border-white/10 py-2'
-                    : 'bg-transparent border-transparent py-3'
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-black border-white/10',
+                isScrolled ? 'py-2' : 'py-3'
             )}
         >
             <div className="w-full px-6 md:px-12 flex items-center justify-between">
