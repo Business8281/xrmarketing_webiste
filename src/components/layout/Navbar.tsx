@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-import logoHeader from '../../assets/header-logo.jpg';
+import logoHeader from '../../assets/header-logo.png';
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +41,7 @@ export function Navbar() {
                         <img
                             src={logoHeader}
                             alt="XRMarketing"
-                            className="h-28 md:h-32 w-auto object-contain invert mix-blend-screen transition-transform transform group-hover:scale-105"
+                            className="h-28 md:h-32 w-auto object-contain transition-transform transform group-hover:scale-105"
                         />
                     </div>
                 </Link>
