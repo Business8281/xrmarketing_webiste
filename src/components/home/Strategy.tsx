@@ -33,12 +33,12 @@ const steps = [
 
 export function Strategy() {
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-black relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-12">
                     {/* Left Side: Text */}
                     <div className="md:w-1/3 sticky top-32">
-                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-6 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-6 leading-tight">
                             From Strategy to Outcomes: <br />
                             <span className="text-white">Our Proven Approach Ensures Success</span>
                         </h2>
@@ -56,8 +56,8 @@ export function Strategy() {
                                 whileInView={{ opacity: 1, y: step.yOffset }} // Staggered vertical layout
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                                className={`flex-1 p-6 rounded-2xl ${step.color} aspect-square flex flex-col justify-end group hover:scale-105 transition-transform duration-300 md:mt-0 mt-6`}
-                                style={{ marginTop: `${index * 2}rem` }} // Mobile fallback or desktop stagger
+                                className={`flex-1 p-6 rounded-2xl ${step.color} aspect-square flex flex-col justify-end group hover:scale-105 transition-transform duration-300 md:mt-0 mt-6 ${index === 1 ? 'md:mt-8' : index === 2 ? 'md:mt-16' : index === 3 ? 'md:mt-24' : ''
+                                    }`}
                             >
                                 <h3 className={`text-2xl font-bold ${step.textColor} mb-2`}>{step.title}</h3>
                                 <p className={`${step.textColor} opacity-80 text-sm`}>{step.desc}</p>
