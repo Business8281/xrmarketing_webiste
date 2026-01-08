@@ -6,28 +6,32 @@ const steps = [
         desc: 'We analyze your market position.',
         color: 'bg-blue-600',
         textColor: 'text-blue-100',
-        yOffset: 0
+        yOffset: 0,
+        mtClass: 'md:mt-0'
     },
     {
         title: 'Content Strategy',
         desc: 'Planning the narrative.',
         color: 'bg-green-500',
         textColor: 'text-green-50',
-        yOffset: 40
+        yOffset: 40,
+        mtClass: 'md:mt-12'
     },
     {
         title: 'Campaign Execution',
         desc: 'Launching with precision.',
         color: 'bg-purple-600',
         textColor: 'text-purple-100',
-        yOffset: 80
+        yOffset: 80,
+        mtClass: 'md:mt-24'
     },
     {
         title: 'Performance Analysis',
         desc: 'Optimizing for ROI.',
         color: 'bg-orange-500',
         textColor: 'text-orange-100',
-        yOffset: 120
+        yOffset: 120,
+        mtClass: 'md:mt-36'
     }
 ];
 
@@ -53,11 +57,10 @@ export function Strategy() {
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: step.yOffset }} // Staggered vertical layout
+                                whileInView={{ opacity: 1, y: step.yOffset }} // Desktop motion stagger
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                                className={`flex-1 p-6 rounded-2xl ${step.color} aspect-square flex flex-col justify-end group hover:scale-105 transition-transform duration-300 md:mt-0 mt-6 ${index === 1 ? 'md:mt-8' : index === 2 ? 'md:mt-16' : index === 3 ? 'md:mt-24' : ''
-                                    }`}
+                                className={`flex-1 p-6 rounded-2xl ${step.color} min-h-[200px] md:aspect-square flex flex-col justify-end group hover:scale-105 transition-transform duration-300 ${step.mtClass}`}
                             >
                                 <h3 className={`text-2xl font-bold ${step.textColor} mb-2`}>{step.title}</h3>
                                 <p className={`${step.textColor} opacity-80 text-sm`}>{step.desc}</p>
