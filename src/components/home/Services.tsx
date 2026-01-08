@@ -1,105 +1,73 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Rocket, Monitor, Cuboid, Globe, Smartphone, BarChart3 } from 'lucide-react'; // Changed Box to Cuboid if Box is deprecated or unavailable, ensuring generic standard icons.
-import clsx from 'clsx';
+import { Share2, Search, Zap, Users, ShieldCheck, Video } from 'lucide-react';
 
 const services = [
     {
-        icon: Rocket,
-        title: 'Performance Marketing',
-        description: 'Data-driven campaigns that maximize ROI and accelerate growth.'
+        icon: Share2,
+        title: 'Social Media Optimization',
+        description: 'Maximize your brand presence across all social platforms.'
     },
     {
-        icon: Monitor,
-        title: 'Web Development',
-        description: 'High-performance websites built with cutting-edge technologies.'
+        icon: Search,
+        title: 'Search Engine Optimization',
+        description: 'Rank higher and drive organic traffic with AI-driven SEO.'
     },
     {
-        icon: Cuboid, // Using Cuboid as a 3D generic icon
-        title: '3D & Immersive',
-        description: 'Interactive 3D experiences that captivate and engage audiences.'
+        icon: Zap,
+        title: 'Whitelabel Marketing',
+        description: 'Partner with us to scale your agency operations seamlessly.'
     },
     {
-        icon: Globe,
-        title: 'SEO & Content',
-        description: 'Strategic content that ranks high and resonates with your users.'
+        icon: Users,
+        title: 'Social Media Marketing',
+        description: 'Engage communities with targeted paid and organic campaigns.'
     },
     {
-        icon: Smartphone,
-        title: 'Mobile Apps',
-        description: 'Native and cross-platform apps designed for modern lifestyles.'
+        icon: ShieldCheck,
+        title: 'Brand Management',
+        description: 'Protect and elevate your brand reputation online.'
     },
     {
-        icon: BarChart3,
-        title: 'Analytics & Strategy',
-        description: 'Deep insights to guide your digital transformation journey.'
+        icon: Video,
+        title: 'Video Production',
+        description: 'High-quality video content that tells your story effectively.'
     }
 ];
 
 export function Services() {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    };
-
     return (
-        <section id="services" className="py-24 bg-black relative overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black pointer-events-none" />
-
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-4">
-                        Our Expertise
+        <section className="py-24 bg-white text-black">
+            <div className="container mx-auto px-6">
+                <div className="flex flex-col md:flex-row justify-between items-start mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold max-w-xl">
+                        Cruise Towards Intelligent Digital Marketing With Our Tailored Services
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
-                        Comprehensive digital solutions tailored for the modern era.
-                    </p>
+                    <button className="mt-4 md:mt-0 px-6 py-2 rounded-full border border-black hover:bg-black hover:text-white transition-all flex items-center gap-2">
+                        Explore More
+                    </button>
                 </div>
 
-                <motion.div
-                    ref={ref}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            variants={itemVariants}
-                            whileHover={{ y: -5 }}
-                            className={clsx(
-                                "p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm",
-                                "hover:bg-white/10 transition-colors duration-300 group cursor-default"
-                            )}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group cursor-pointer"
                         >
-                            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <service.icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                            <div className="mb-4 p-3 bg-gray-100 rounded-lg w-fit group-hover:bg-black group-hover:text-white transition-colors">
+                                <service.icon className="w-6 h-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed border-l-2 border-gray-200 pl-3 group-hover:border-black transition-colors">
                                 {service.description}
                             </p>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
 }
+
