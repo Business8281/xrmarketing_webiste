@@ -65,7 +65,7 @@ export function Strategy() {
                                     key={index}
                                     initial={{ height: '0%', opacity: 0 }}
                                     whileInView={{ height: '100%', opacity: 1 }}
-                                    viewport={{ once: false, threshold: 0.2 }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
                                     className={`snap-center shrink-0 w-[80%] sm:w-[60%] rounded-xl ${step.color} p-6 flex flex-col justify-end relative`}
                                     style={{ minHeight: '200px' }}
