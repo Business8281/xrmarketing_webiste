@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export function Hero() {
     return (
-        <section className="relative w-full h-screen bg-black overflow-hidden">
+        <section className="relative w-full h-[100dvh] bg-black overflow-hidden">
             {/* 3D Scene Background */}
             <div className="absolute inset-0 z-0">
                 <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
@@ -15,7 +15,7 @@ export function Hero() {
             </div>
 
             {/* Overlay Content */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center pointer-events-none pb-32">
+            <div className="relative z-10 w-full h-full flex items-center justify-center pointer-events-none">
                 <div className="container mx-auto px-6 text-center">
                     <motion.h1
                         initial="hidden"
