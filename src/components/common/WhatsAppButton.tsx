@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 
 export function WhatsAppButton() {
@@ -13,9 +14,13 @@ export function WhatsAppButton() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center drop-shadow-2xl hover:drop-shadow-[0_0_15px_rgba(37,211,102,0.6)] transition-all duration-300"
+                className="transition-all duration-300 drop-shadow-2xl hover:drop-shadow-[0_0_20px_rgba(37,211,102,0.6)]"
             >
-                <img src="/whatsapp.png" alt="WhatsApp" className="w-full h-full object-contain" />
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    alt="WhatsApp"
+                    className="w-14 h-14 md:w-16 md:h-16"
+                />
             </motion.div>
             {/* Use a tooltip or label on hover? Maybe keep it simple icon first. */}
         </a>
