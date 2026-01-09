@@ -10,6 +10,8 @@ import './index.css';
 
 import { WhatsAppButton } from './components/common/WhatsAppButton';
 
+import ServiceDetail from './pages/ServiceDetail';
+
 function App() {
   const [queryClient] = useState(() => new QueryClient());
 
@@ -19,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
