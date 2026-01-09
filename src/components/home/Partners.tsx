@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion';
 
-const partners = ['Meta', 'Google', 'Shopify', 'Amazon', 'PrestaShop', 'HubSpot'];
+const partners = [
+    { name: 'Meta', url: 'https://cdn.simpleicons.org/meta/white' },
+    { name: 'Google', url: 'https://cdn.simpleicons.org/google/white' },
+    { name: 'Shopify', url: 'https://cdn.simpleicons.org/shopify/white' },
+    { name: 'Amazon', url: 'https://cdn.simpleicons.org/amazon/white' },
+    { name: 'PrestaShop', url: 'https://cdn.simpleicons.org/prestashop/white' },
+    { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot/white' }
+];
 
 export function Partners() {
     return (
@@ -20,9 +27,13 @@ export function Partners() {
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="flex items-center justify-center p-4 border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
+                            className="flex items-center justify-center p-6 border border-white/10 rounded-lg hover:bg-white/5 transition-colors group"
                         >
-                            <span className="font-bold text-xl text-gray-300">{p}</span>
+                            <img
+                                src={p.url}
+                                alt={`${p.name} logo`}
+                                className="h-8 md:h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
+                            />
                         </motion.div>
                     ))}
                 </div>
