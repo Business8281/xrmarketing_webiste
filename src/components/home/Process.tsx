@@ -18,29 +18,36 @@ export function Process() {
                             style={{
                                 background: `conic-gradient(
                                     from 0deg,
-                                    #3b82f6 0deg 60deg,   /* Blue */
+                                    #3b82f6 0deg 60deg,   /* Blue - Strategy */
                                     #ef4444 60deg 120deg, /* Red */
-                                    #eab308 120deg 180deg, /* Yellow */
-                                    #f97316 180deg 240deg, /* Orange */
+                                    #eab308 120deg 180deg, /* Yellow - Design */
+                                    #f97316 180deg 240deg, /* Orange - Dev */
                                     #a855f7 240deg 300deg, /* Purple */
-                                    #06b6d4 300deg 360deg  /* Cyan */
+                                    #06b6d4 300deg 360deg  /* Cyan - Market */
                                 )`,
-                                maskImage: 'radial-gradient(transparent 45%, black 46%)',
-                                WebkitMaskImage: 'radial-gradient(transparent 45%, black 46%)'
+                                maskImage: 'radial-gradient(transparent 50%, black 51%)',
+                                WebkitMaskImage: 'radial-gradient(transparent 50%, black 51%)'
                             }}
                         />
 
-                        {/* Labels for segments - absolute positioned */}
+                        {/* Labels for segments */}
                         <div className="absolute inset-0 pointer-events-none">
-                            <span className="absolute top-[15%] right-[25%] text-xs font-bold text-white">Strategy</span>
-                            <span className="absolute bottom-[25%] right-[15%] text-xs font-bold text-white">Design</span>
-                            <span className="absolute bottom-[15%] left-[25%] text-xs font-bold text-white">Dev</span>
-                            <span className="absolute top-[25%] left-[15%] text-xs font-bold text-white">Market</span>
+                            {/* Strategy - Blue (30deg) */}
+                            <span className="absolute top-[18%] right-[18%] text-sm font-bold text-white drop-shadow-md">Strategy</span>
+
+                            {/* Design - Yellow (150deg) */}
+                            <span className="absolute bottom-[18%] right-[18%] text-sm font-bold text-white drop-shadow-md">Design</span>
+
+                            {/* Dev - Orange (210deg) */}
+                            <span className="absolute bottom-[18%] left-[18%] text-sm font-bold text-white drop-shadow-md">Dev</span>
+
+                            {/* Market - Cyan (330deg) */}
+                            <span className="absolute top-[18%] left-[18%] text-sm font-bold text-white drop-shadow-md">Market</span>
                         </div>
 
                         {/* Central Icon */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center border-4 border-gray-800 z-10">
+                            <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center border-4 border-gray-800 z-10 shadow-2xl">
                                 <Lightbulb className="w-10 h-10 text-yellow-500 animate-pulse" />
                             </div>
                         </div>
