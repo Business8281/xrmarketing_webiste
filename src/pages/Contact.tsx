@@ -43,24 +43,24 @@ export default function Contact() {
                         <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
                             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-gray-300">
-                                    <div className="p-3 rounded-full bg-blue-500/10 text-blue-400">
+                                <a href="mailto:business8281@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                    <div className="p-3 rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
                                         <Mail />
                                     </div>
-                                    <span>hello@xrmarketing.com</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-gray-300">
-                                    <div className="p-3 rounded-full bg-purple-500/10 text-purple-400">
+                                    <span>business8281@gmail.com</span>
+                                </a>
+                                <a href="tel:+917075545960" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                    <div className="p-3 rounded-full bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all">
                                         <Phone />
                                     </div>
-                                    <span>+1 (707) 554-5960</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-gray-300">
-                                    <div className="p-3 rounded-full bg-pink-500/10 text-pink-400">
+                                    <span>+91 7075545960</span>
+                                </a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kphb+Metro,+Hyderabad" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                    <div className="p-3 rounded-full bg-pink-500/10 text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-all">
                                         <MapPin />
                                     </div>
-                                    <span>123 Innovation Dr, Tech City, TC 90210</span>
-                                </div>
+                                    <span>Kphb Metro, Hyderabad</span>
+                                </a>
                             </div>
                         </div>
                     </motion.div>
@@ -96,8 +96,8 @@ export default function Contact() {
                                             type="button"
                                             onClick={() => toggleService(service)}
                                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedServices.includes(service)
-                                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
-                                                    : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                                                : 'bg-white/5 text-gray-400 hover:bg-white/10'
                                                 }`}
                                         >
                                             {service}
