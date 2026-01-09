@@ -8,6 +8,8 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import './index.css';
 
+import { WhatsAppButton } from './components/common/WhatsAppButton';
+
 function App() {
   const [queryClient] = useState(() => new QueryClient());
 
@@ -21,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
+        <WhatsAppButton />
       </BrowserRouter>
     </QueryClientProvider>
   );
