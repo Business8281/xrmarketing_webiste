@@ -5,7 +5,8 @@ const partners = [
     { name: 'Google', url: 'https://cdn.simpleicons.org/google' },
     { name: 'Shopify', url: 'https://cdn.simpleicons.org/shopify' },
     { name: 'PrestaShop', url: 'https://cdn.simpleicons.org/prestashop' },
-    { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot' }
+    { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot' },
+    { name: 'Zoho', url: 'https://cdn.simpleicons.org/zoho' }
 ];
 
 export function Partners() {
