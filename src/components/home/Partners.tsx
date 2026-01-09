@@ -27,13 +27,14 @@ export function Partners() {
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="flex items-center justify-center p-6 border border-white/10 rounded-lg hover:bg-white/5 transition-colors group"
+                            className="flex flex-col items-center justify-center p-6 border border-white/10 rounded-lg hover:bg-white/5 transition-colors group gap-4"
                         >
                             <img
                                 src={p.url}
                                 alt={`${p.name} logo`}
-                                className="h-8 md:h-10 w-auto object-contain"
+                                className="h-10 md:h-12 w-auto object-contain"
                             />
+                            <span className="font-bold text-lg text-gray-300 group-hover:text-white transition-colors">{p.name}</span>
                         </motion.div>
                     ))}
                 </div>
