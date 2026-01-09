@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const partners = [
-    { name: 'Meta', url: 'https://cdn.simpleicons.org/meta/white' },
-    { name: 'Google', url: 'https://cdn.simpleicons.org/google/white' },
-    { name: 'Shopify', url: 'https://cdn.simpleicons.org/shopify/white' },
-    { name: 'Amazon', url: 'https://cdn.simpleicons.org/amazon/white' },
-    { name: 'PrestaShop', url: 'https://cdn.simpleicons.org/prestashop/white' },
-    { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot/white' }
+    { name: 'Meta', url: 'https://cdn.simpleicons.org/meta' },
+    { name: 'Google', url: 'https://cdn.simpleicons.org/google' },
+    { name: 'Shopify', url: 'https://cdn.simpleicons.org/shopify' },
+    { name: 'Amazon', url: 'https://cdn.simpleicons.org/amazon' },
+    { name: 'PrestaShop', url: 'https://cdn.simpleicons.org/prestashop' },
+    { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot' }
 ];
 
 export function Partners() {
@@ -32,7 +32,7 @@ export function Partners() {
                             <img
                                 src={p.url}
                                 alt={`${p.name} logo`}
-                                className="h-8 md:h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
+                                className="h-8 md:h-10 w-auto object-contain"
                             />
                         </motion.div>
                     ))}
