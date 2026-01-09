@@ -1,4 +1,3 @@
-import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function WhatsAppButton() {
@@ -14,9 +13,9 @@ export function WhatsAppButton() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                className="bg-[#25D366] p-4 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,211,102,0.5)]"
+                className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center drop-shadow-2xl hover:drop-shadow-[0_0_15px_rgba(37,211,102,0.6)] transition-all duration-300"
             >
-                <MessageCircle className="w-8 h-8 text-white fill-current" />
+                <img src="/whatsapp.png" alt="WhatsApp" className="w-full h-full object-contain" />
             </motion.div>
             {/* Use a tooltip or label on hover? Maybe keep it simple icon first. */}
         </a>
