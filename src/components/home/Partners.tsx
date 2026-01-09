@@ -4,7 +4,6 @@ const partners = [
     { name: 'Meta', url: 'https://cdn.simpleicons.org/meta' },
     { name: 'Google', url: 'https://cdn.simpleicons.org/google' },
     { name: 'Shopify', url: 'https://cdn.simpleicons.org/shopify' },
-    { name: 'Amazon', url: 'https://cdn.simpleicons.org/amazon' },
     { name: 'PrestaShop', url: 'https://cdn.simpleicons.org/prestashop' },
     { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot' }
 ];
