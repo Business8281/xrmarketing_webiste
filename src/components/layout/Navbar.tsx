@@ -88,7 +88,6 @@ export function Navbar() {
 
                                     <div className="col-span-2 mb-2 pb-2 border-b border-gray-100 flex justify-between items-center">
                                         <h3 className="font-bold text-xl text-black">Our Services</h3>
-                                        <Link to="/services" className="text-sm text-blue-600 hover:underline">View All</Link>
                                     </div>
 
                                     {servicesList.map(service => (
@@ -163,7 +162,6 @@ export function Navbar() {
                                             {service}
                                         </Link>
                                     ))}
-                                    <Link to="/services" className="text-blue-400 text-sm mt-2">View All Services...</Link>
                                 </div>
 
                                 {simpleLinks.map((link) => (
