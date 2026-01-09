@@ -1,8 +1,25 @@
 import { Navbar } from '../components/layout/Navbar';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Contact() {
+    const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+    const services = [
+        'SEO', 'PPC', 'Social Media', 'Content Marketing',
+        'Web Development', 'App Development', 'Strategy',
+        'Branding', 'Analytics', 'Email Marketing'
+    ];
+
+    const toggleService = (service: string) => {
+        if (selectedServices.includes(service)) {
+            setSelectedServices(selectedServices.filter(s => s !== service));
+        } else {
+            setSelectedServices([...selectedServices, service]);
+        }
+    };
+
     return (
         <div className="bg-black min-h-screen text-white">
             <Navbar />
@@ -36,7 +53,7 @@ export default function Contact() {
                                     <div className="p-3 rounded-full bg-purple-500/10 text-purple-400">
                                         <Phone />
                                     </div>
-                                    <span>+1 (555) 123-4567</span>
+                                    <span>+1 (707) 554-5960</span>
                                 </div>
                                 <div className="flex items-center gap-4 text-gray-300">
                                     <div className="p-3 rounded-full bg-pink-500/10 text-pink-400">
@@ -55,24 +72,45 @@ export default function Contact() {
                         transition={{ delay: 0.4 }}
                     >
                         <form className="space-y-6 p-8 rounded-3xl bg-white/5 border border-white/10">
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-400">First Name</label>
-                                    <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-400">Last Name</label>
-                                    <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
-                                </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-400">Full Name</label>
+                                <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" placeholder="John Doe" />
                             </div>
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-400">Phone Number</label>
+                                <input type="tel" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" placeholder="+1 (555) 000-0000" />
+                            </div>
+
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-400">Email</label>
-                                <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
+                                <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" placeholder="john@example.com" />
                             </div>
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-400">I'm interested in...</label>
+                                <div className="flex flex-wrap gap-3">
+                                    {services.map(service => (
+                                        <button
+                                            key={service}
+                                            type="button"
+                                            onClick={() => toggleService(service)}
+                                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedServices.includes(service)
+                                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                                                    : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                                                }`}
+                                        >
+                                            {service}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-400">Message</label>
-                                <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
+                                <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" placeholder="Tell us about your project..." />
                             </div>
+
                             <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 font-bold hover:opacity-90 transition-opacity">
                                 Send Message
                             </button>
